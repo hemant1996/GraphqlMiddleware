@@ -1,0 +1,18 @@
+type User {
+    _id: ID!
+}
+
+type AuthData {
+    userId: ID!
+    token: String!
+    tokenExpiration: Int!
+}
+
+type Query {
+    users: [User!]!
+    jwtToken(firebase_id: String): AuthData!
+}
+
+type Mutation {
+    createUser(userInput: UserInput): AuthData!
+}
